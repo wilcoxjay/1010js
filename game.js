@@ -13,12 +13,14 @@
 var BOARD_SIZE = makeVec(10, 10);
 
 // position of the top left corner of the board
-var BOARD_OFFSET = makeVec(200, 100);
+var BOARD_OFFSET = multVec(makeVec(screenWidth, screenHeight), makeVec(0.25, 0.1));
 
-var TILE_SIZE = makeVec(50, 50);
+var TILE_SIZE = makeVec(75, 75);
+
 
 // pieces yet to be placed are displayed at PIECES_OFFSET.
-var PIECES_OFFSET = addVec(makeVec(-100, 100), boardPosition(0, BOARD_SIZE.y));
+var PIECES_OFFSET = addVec(multVec(makeVec(screenWidth, screenHeight), makeVec(-0.1, 0.1)),
+                           boardPosition(0, BOARD_SIZE.y));
 
 var WHITE = makeColor(1, 1, 1);
 
@@ -318,8 +320,6 @@ function drawDrag() {
 }
 
 function getBoardEltUnder(pos) {
-    //pos = makeVec(round((pos.x - BOARD_OFFSET.x) / TILE_SIZE.x) * TILE_SIZE.x + BOARD_OFFSET.x,
-    //              round((pos.y - BOARD_OFFSET.y) / TILE_SIZE.y) * TILE_SIZE.y + BOARD_OFFSET.y);
     for (var i = 0; i < BOARD_SIZE.x; i++) {
         for (var j = 0; j < BOARD_SIZE.y; j++) {
             var bb = makeRectangle(boardPosition(i - 0.5, j - 0.5), TILE_SIZE.x, TILE_SIZE.y);
