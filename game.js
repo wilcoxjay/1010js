@@ -27,18 +27,53 @@ var NUM_PIECES = 3;
 
 // these are all the possible pieces. note that each rotation is
 // stored separately, but in the future these may be computed automatically.
-var PIECES = [{name: "square",
+var PIECES = [{name: "square-2",
                elements: [makeVec(0,0), makeVec(0,1),
                           makeVec(1,0), makeVec(1,1)]},
+              {name: "square-2",
+               elements: [makeVec(0,0), makeVec(0,1), makeVec(0,2),
+                          makeVec(1,0), makeVec(1,1), makeVec(1,2),
+                          makeVec(2,0), makeVec(2,1), makeVec(2,2)]},
               {name: "one",
                elements: [makeVec(0,0)]},
+
               {name: "two-h",
                elements: [makeVec(0,0), makeVec(1,0)]},
               {name: "two-v",
                elements: [makeVec(0,0), makeVec(0,1)]},
+
+              {name: "three-h",
+               elements: [makeVec(0,0), makeVec(1,0), makeVec(2,0)]},
+              {name: "three-v",
+               elements: [makeVec(0,0), makeVec(0,1), makeVec(0,2)]},
+
+              {name: "four-h",
+               elements: [makeVec(0,0), makeVec(1,0), makeVec(2,0), makeVec(3,0)]},
+              {name: "four-v",
+               elements: [makeVec(0,0), makeVec(0,1), makeVec(0,2), makeVec(0,3)]},
+
+
               {name: "five-h",
                elements: [makeVec(0,0), makeVec(1,0), makeVec(2,0),
                           makeVec(3,0), makeVec(4,0)]},
+              {name: "five-v",
+               elements: [makeVec(0,0), makeVec(0,1), makeVec(0,2),
+                          makeVec(0,3), makeVec(0,4)]},
+
+              {name: "ell-1",
+               elements: [makeVec(0,0), makeVec(1,0), makeVec(2,0),
+                          makeVec(0,1), makeVec(0,2)]},
+              {name: "ell-2",
+               elements: [makeVec(0,0), makeVec(1,0), makeVec(2,0),
+                          makeVec(2,1), makeVec(2,2)]},
+              {name: "ell-3",
+               elements: [makeVec(0,2), makeVec(1,2), makeVec(2,0),
+                          makeVec(2,1), makeVec(2,2)]},
+              {name: "ell-4",
+               elements: [makeVec(2,2), makeVec(1,2), makeVec(0,0),
+                          makeVec(0,1), makeVec(0,2)]},
+
+
 ];
 
 // the maximum width or height of any piece.
