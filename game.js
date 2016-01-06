@@ -13,13 +13,12 @@
 var BOARD_SIZE = makeVec(10, 10);
 
 // position of the top left corner of the board
-var BOARD_OFFSET = multVec(makeVec(screenWidth, screenHeight), makeVec(0.25, 0.1));
+var BOARD_OFFSET = multVec(makeVec(screenWidth, screenHeight), makeVec(0.25, 0.025));
 
-var TILE_SIZE = makeVec(75, 75);
-
+var TILE_SIZE = makeVec(80, 80);
 
 // pieces yet to be placed are displayed at PIECES_OFFSET.
-var PIECES_OFFSET = addVec(multVec(makeVec(screenWidth, screenHeight), makeVec(-0.1, 0.1)),
+var PIECES_OFFSET = addVec(multVec(makeVec(screenWidth, screenHeight), makeVec(-0.1, 0.025)),
                            boardPosition(0, BOARD_SIZE.y));
 
 var WHITE = makeColor(1, 1, 1);
@@ -219,8 +218,8 @@ function drawTile(pos, color) {
 
 function drawScore() {
     fillText(score.toString(),
-             BOARD_OFFSET.x + (BOARD_SIZE.x / 2) * TILE_SIZE.x,
-             BOARD_OFFSET.y / 2,
+             BOARD_OFFSET.x / 2,
+             BOARD_OFFSET.y + (BOARD_SIZE.y / 2) * TILE_SIZE.y,
              WHITE,
              "40pt arial",
              "center",
